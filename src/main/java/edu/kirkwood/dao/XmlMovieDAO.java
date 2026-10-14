@@ -24,18 +24,6 @@ public class XmlMovieDAO implements MovieDAO<MovieSearchResult> {
     }
 
     /**
-     * Find a single movie by its unique ID
-     *
-     * @param id The ID of the movie to find
-     * @return The single movie object, or null if not found
-     */
-    @Override
-    public MovieSearchResult findById(String id) {
-        System.out.println("Fetching movie " + id + " from XML...");
-        return null;
-    }
-
-    /**
      * Retrieves all movies from the data source that match the title
      *
      * @param title The title of the movie
