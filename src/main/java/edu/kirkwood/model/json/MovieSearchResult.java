@@ -7,7 +7,7 @@ public class MovieSearchResult {
     private String id;
     private String title;
     private String overview;
-//    private LocalDate release_date;
+    private LocalDate release_date;
 
     public String getId() {
         return id;
@@ -21,9 +21,9 @@ public class MovieSearchResult {
         return overview;
     }
 
-//    public LocalDate getRelease_date() {
-//        return release_date;
-//    }
+    public LocalDate getRelease_date() {
+        return release_date;
+    }
 
     @Override
     public String toString() {
@@ -31,7 +31,7 @@ public class MovieSearchResult {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", overview='" + overview + '\'' +
-//                ", release_date=" + release_date +
+                ", release_date=" + release_date +
                 '}';
     }
 }
