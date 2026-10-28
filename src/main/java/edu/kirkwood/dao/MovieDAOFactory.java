@@ -1,7 +1,9 @@
 package edu.kirkwood.dao;
 
+import edu.kirkwood.dao.json.JsonMovieDAO;
+import edu.kirkwood.dao.xml.XmlMovieDAO;
+
 import java.io.InputStream;
-import java.util.IllformedLocaleException;
 import java.util.Properties;
 
 public class MovieDAOFactory {

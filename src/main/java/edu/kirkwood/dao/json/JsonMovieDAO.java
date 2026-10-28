@@ -1,9 +1,9 @@
-package edu.kirkwood.dao;
+package edu.kirkwood.dao.json;
 
 import com.google.gson.*;
+import edu.kirkwood.dao.MovieDAO;
 import edu.kirkwood.model.json.MovieSearchResult;
 import edu.kirkwood.model.json.TmdbMovieResponse;
-import jdk.swing.interop.SwingInterOpUtils;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class JsonMovieDAO implements MovieDAO<MovieSearchResult>{
+public class JsonMovieDAO implements MovieDAO<MovieSearchResult> {
     private String apiURL;
     private String apiToken;
 
