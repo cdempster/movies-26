@@ -18,7 +18,7 @@ public class MyDataApplication {
     @Bean
     CommandLineRunner run(SQLMovieDAO movieDAO){
         return args -> {
-            String title = "stand";
+            String title = "silence";
             List<MovieEntity> movies = movieDAO.search(title);
             if(movies.isEmpty()){
                 System.out.println("No movies found containing '" + title + "' in the title.");
