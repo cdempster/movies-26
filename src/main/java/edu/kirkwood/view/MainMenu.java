@@ -27,10 +27,10 @@ public class MainMenu {
             int choice = getInt("What would you like to search for?", true, 1, menuItems.length);
             switch(choice) {
                 case 1:
-                    MainMenu.show(movieDAO);
+                    MainMenu.searchTitle(movieDAO);
                     break;
                 case 2:
-                    MainMenu.show(dahliaDAO);
+                    MainMenu.searchVariety(dahliaDAO);
                     break;
                 default:
                     // Quit
@@ -39,7 +39,7 @@ public class MainMenu {
         } // end loop
     } // end show method
 
-    public static void show(SQLMovieDAO movieDAO){
+    public static void searchTitle(SQLMovieDAO movieDAO){
         String title = edu.kirkwood.view.UserInput.getString("Enter the movie title to search for: ");
         java.util.List<edu.kirkwood.model.sql.MovieEntity> movies = movieDAO.search(title);
         if(movies.isEmpty()){
@@ -50,7 +50,7 @@ public class MainMenu {
         pressEnterToContinue();
     }
 
-    public static void show(SQLDahliaDAO dahliaDAO) {
+    public static void searchVariety(SQLDahliaDAO dahliaDAO) {
         String varietyName = getString("Enter the dahlia variety name to search for: ");
         List<DahliaEntity> dahliaVarieties = dahliaDAO.search(varietyName);
         if(dahliaVarieties.isEmpty()) {
