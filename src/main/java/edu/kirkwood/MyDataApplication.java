@@ -1,7 +1,8 @@
 package edu.kirkwood;
 
+import edu.kirkwood.dao.sql.SQLDahliaDAO;
 import edu.kirkwood.dao.sql.SQLMovieDAO;
-import edu.kirkwood.model.sql.MovieEntity;
+import edu.kirkwood.view.MainMenu;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,15 +17,9 @@ public class MyDataApplication {
     }
 
     @Bean
-    CommandLineRunner run(SQLMovieDAO movieDAO){
+    CommandLineRunner run(SQLMovieDAO movieDAO, SQLDahliaDAO dahliaDAO) {
         return args -> {
-            String title = "silence";
-            List<MovieEntity> movies = movieDAO.search(title);
-            if(movies.isEmpty()){
-                System.out.println("No movies found containing '" + title + "' in the title.");
-            } else {
-                movies.forEach(System.out::println);
-            }
+            MainMenu.show(movieDAO, dahliaDAO);
         };
     }
 }
